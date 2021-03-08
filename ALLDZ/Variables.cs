@@ -7,17 +7,15 @@ namespace ALLDZ
     class Variables
     {
 
-        public static void Exercise_01()
+        public static void Exercise_01(double numberA, double numberB)
         {
             //1. Пользователь вводит 2 числа (A и B). Выведите в консоль решение (5*A+B*B)/(B-A)
-            Console.WriteLine("Введите число A");
-            double numberA = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите число B");
-            double numberB = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите число C");
-            double numberC = Convert.ToDouble(Console.ReadLine());
+            if (numberA == numberB)
+            {
+                throw new Exception("B - A = 0, происходит деление на ноль.");
+            }
             double otvet1 = (5 * numberA + numberB * numberB) / (numberB - numberA);
-            Console.WriteLine("Ответ на первое задание: " + otvet1);                       
+            Console.WriteLine("Ответ на первое задание: " + otvet1);
         }
 
         public static void Exercise_02()
@@ -27,7 +25,7 @@ namespace ALLDZ
             double numberA = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Введите число B");
             double numberB = Convert.ToDouble(Console.ReadLine());
-            
+
             double numberK = numberB;
             numberB = numberA;
             numberA = numberK;
@@ -83,6 +81,6 @@ namespace ALLDZ
             {
                 Console.WriteLine("Ответ на пятое задание: Y = " + numberA + "X +" + numberB);
             }
-        }        
+        }
     }
 }

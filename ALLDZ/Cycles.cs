@@ -6,6 +6,7 @@ namespace ALLDZ
 {
     class Cycles
     {
+
         public static void Exercise_01()
         {
             // 1. Пользователь вводит 2 числа (A и B). Возвести число A в степень B.
@@ -70,7 +71,7 @@ namespace ALLDZ
                 if (i * i < numberA)
                 {
                     tmp++;
-                } 
+                }
             }
             Console.WriteLine("Ответ на третье задание: " + tmp);
         }
@@ -337,12 +338,12 @@ namespace ALLDZ
             }
 
 
-            while (numberA / 10 > 0 || numberA % 10 > 0)
+            while (numberA != 0)
             {
                 tmp2 = numberB;
                 tmp = numberA % 10;
                 numberA /= 10;
-                while (tmp != tmp2 && (tmp2 / 10 > 0 || tmp2 % 10 > 0))
+                while (tmp != tmp2 && tmp2 != 0)
                 {
                     tmp3 = tmp2 % 10;
                     if (tmp == tmp3)
