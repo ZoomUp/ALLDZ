@@ -10,9 +10,13 @@ namespace ALLDZ
             double numberA = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Введите число B");
             double numberB = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите число A");
+            double numberC = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите число B");
+            double numberD = Convert.ToDouble(Console.ReadLine());
 
-            Variables.Exercise_01(numberA, numberB);
-
+            
+            Console.WriteLine(Variables.Exercise_05(numberA, numberB, numberC, numberD));
 
         }
     }

@@ -143,6 +143,7 @@ namespace ALLDZ
 
             double numberX1;
             double numberX2;
+            // exception на нули
 
             double numberDiskriminant = numberB4 * numberB4 - 4 * numberA4 * numberC4;
             Console.WriteLine(numberDiskriminant);

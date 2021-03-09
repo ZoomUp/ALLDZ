@@ -4,10 +4,10 @@ using System.Text;
 
 namespace ALLDZ
 {
-    class Variables
+    public class Variables
     {
 
-        public static void Exercise_01(double numberA, double numberB)
+        public static double Exercise_01(double numberA, double numberB)
         {
             //1. Пользователь вводит 2 числа (A и B). Выведите в консоль решение (5*A+B*B)/(B-A)
             if (numberA == numberB)
@@ -15,72 +15,84 @@ namespace ALLDZ
                 throw new Exception("B - A = 0, происходит деление на ноль.");
             }
             double otvet1 = (5 * numberA + numberB * numberB) / (numberB - numberA);
-            Console.WriteLine("Ответ на первое задание: " + otvet1);
+
+            return otvet1;
         }
 
-        public static void Exercise_02()
+        public static double[] Exercise_02(double numberA, double numberB)
         {
             //2. Пользователь вводит 2 значения(A и B). Поменяйте содержимое переменных A и B местами.
-            Console.WriteLine("Введите число A");
-            double numberA = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите число B");
-            double numberB = Convert.ToDouble(Console.ReadLine());
-
             double numberK = numberB;
             numberB = numberA;
             numberA = numberK;
 
-            Console.WriteLine("Ответ на второе задание: A = " + numberA + ", число B = " + numberB);
+            double[] arr = new double[2] {numberA, numberB};
+
+            return arr;
         }
 
 
-        public static void Exercise_03()
+        public static double[] Exercise_03(double numberA, double numberB)
         {
             //3. Пользователь вводит 2 числа (A и B). Выведите в консоль результат деления A на B и остаток от деления.
-            Console.WriteLine("Введите число A");
-            double numberA = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите число B");
-            double numberB = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Ответ на третье задание: результат деления A/B = " + numberA / numberB + ", остаток от деления = " + numberA % numberB);
+            if (numberB == 0)
+            {
+                throw new Exception("B = 0, происходит деление на ноль.");
+            }
+            double division = numberA / numberB;
+            double remainder = numberA % numberB;
+            double[] arr = new double[2] { division, remainder };
+            return arr;
         }
 
 
-        public static void Exercise_04()
+        public static string Exercise_04(double numberA, double numberB, double numberC)
         {
             //4. Пользователь вводит 3 числа (A, B и С). Выведите в консоль решение(значение X) линейного уравнения стандартного вида, где A*X+B=C.
-            Console.WriteLine("Введите число A");
-            double numberA = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите число B");
-            double numberB = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите число C");
-            double numberC = Convert.ToDouble(Console.ReadLine());
-
-            double numberX = (numberC - numberB) / numberA;
-            Console.WriteLine("Ответ на четвертое задание: значение X для уравнения A*X+B=C равно " + numberX);
-        }
-
-        public static void Exercise_05()
-        {
-            //5. Пользователь вводит 4 числа (X1, Y1, X2, Y2), описывающие координаты 2-х точек на координатной плоскости. Выведите уравнение прямой в формате Y=AX+B, проходящей через эти точки.
-            Console.WriteLine("Введите значение X1");
-            double numberX1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите значение Y1");
-            double numberY1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите значение X2");
-            double numberX2 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите значение Y2");
-            double numberY2 = Convert.ToDouble(Console.ReadLine());
-
-            double numberA = (numberY2 - numberY1) / (numberX2 - numberX1);
-            double numberB = numberY1 - numberA * numberX1;
-            if (numberB < 0)
+            if (numberA == 0)
             {
-                Console.WriteLine("Ответ на пятое задание: Y = " + numberA + "X + (" + numberB + ")");
+                if (numberB == numberC)
+                {
+                    return "Бесконечно решений";
+                }
+                else
+                {
+                    return "Нет решений";
+                }
+                
             }
             else
             {
-                Console.WriteLine("Ответ на пятое задание: Y = " + numberA + "X +" + numberB);
+                double numberX = (numberC - numberB) / numberA;
+                return numberX.ToString();
             }
+            
+            
+
+        }
+
+        public static string Exercise_05(double numberX1, double numberX2, double numberY1, double numberY2)
+        {
+            //5. Пользователь вводит 4 числа (X1, Y1, X2, Y2), описывающие координаты 2-х точек на координатной плоскости. Выведите уравнение прямой в формате Y=AX+B, проходящей через эти точки.
+
+            if (numberX1 == numberX2 || numberY1 == numberY2)
+            {
+                return "Влом";
+            }
+            else
+            {
+                double numberA = (numberY2 - numberY1) / (numberX2 - numberX1);
+                double numberB = numberY1 - numberA * numberX1;
+                if (numberB < 0)
+                {
+                    return "Y=" + numberA + "X+(" + numberB + ")";
+                }
+                else
+                {
+                    return "Y=" + numberA + "X+" + numberB;
+                }
+            }
+            
         }
     }
 }

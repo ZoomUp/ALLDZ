@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALLDZ", "ALLDZ\ALLDZ.csproj", "{36936CB1-FC52-4F87-AE1A-E65C1D0536A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALLDZ", "ALLDZ\ALLDZ.csproj", "{36936CB1-FC52-4F87-AE1A-E65C1D0536A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALLDZ.Tests", "ALLDZ.Tests\ALLDZ.Tests.csproj", "{E6F41C41-BF1A-405D-A14F-81545A0DA6BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{36936CB1-FC52-4F87-AE1A-E65C1D0536A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36936CB1-FC52-4F87-AE1A-E65C1D0536A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36936CB1-FC52-4F87-AE1A-E65C1D0536A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6F41C41-BF1A-405D-A14F-81545A0DA6BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6F41C41-BF1A-405D-A14F-81545A0DA6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6F41C41-BF1A-405D-A14F-81545A0DA6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6F41C41-BF1A-405D-A14F-81545A0DA6BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
