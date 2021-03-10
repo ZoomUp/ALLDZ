@@ -10,7 +10,6 @@ namespace ALLDZ.Tests
         public void Exercise_01_Test(double numberA, double numberB, double expected)
         {
             double actual = Variables.Exercise_01(numberA, numberB);
-
             Assert.AreEqual(expected, actual);
         }
 
@@ -21,7 +20,6 @@ namespace ALLDZ.Tests
         public void Exercise_02_Test(double numberA, double numberB, double[] expected)
         {
             double[] actual = Variables.Exercise_02(numberA, numberB);
-
             Assert.AreEqual(expected, actual);
         }
 
@@ -32,7 +30,6 @@ namespace ALLDZ.Tests
         public void Exercise_03_Test(double numberA, double numberB, double[] expected)
         {
             double[] actual = Variables.Exercise_03(numberA, numberB);
-
             Assert.AreEqual(expected, actual);
         }
 
