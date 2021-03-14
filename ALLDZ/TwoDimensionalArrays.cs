@@ -4,33 +4,17 @@ using System.Text;
 
 namespace ALLDZ
 {
-    class TwoDimensionalArrays
+    public class TwoDimensionalArrays
     {
-        public static int Exercise_01()
+        public static int Exercise_01(int[,] array2d)
         {
             // 1. Найти минимальный элемент массива
-            int[,] array2d = new int[10, 5];
-
-            Random random = new Random();
-
-            for (int i = 0; i < array2d.GetLength(0); i++)
+            if (array2d == null || array2d.GetLength(0) == 0 || array2d.GetLength(1) == 0)
             {
-                for (int j = 0; j < array2d.GetLength(1); j++)
-                {
-                    array2d[i, j] = random.Next(10, 100);
-                }
-
+                throw new ArgumentNullException("Ошибка ввода двумерного массива");
             }
 
-            for (int i = 0; i < array2d.GetLength(0); i++)
-            {
-                for (int j = 0; j < array2d.GetLength(1); j++)
-                {
-                    Console.Write("{0} ", array2d[i, j]);
-                }
-                Console.WriteLine();
 
-            }
             int minZ1 = array2d[0, 0];
 
 
@@ -50,34 +34,17 @@ namespace ALLDZ
             return minZ1;
         }
 
-        public static int Exercise_02()
+        public static int Exercise_02(int[,] array2d)
         {
             // 2. Найти максимальный элемент массива
-            int[,] array2d = new int[10, 5];
-
-            Random random = new Random();
-
-            for (int i = 0; i < array2d.GetLength(0); i++)
+            if (array2d == null || array2d.GetLength(0) == 0 || array2d.GetLength(1) == 0)
             {
-                for (int j = 0; j < array2d.GetLength(1); j++)
-                {
-                    array2d[i, j] = random.Next(10, 100);
-                }
-
+                throw new ArgumentNullException("Ошибка ввода двумерного массива");
             }
 
-            for (int i = 0; i < array2d.GetLength(0); i++)
-            {
-                for (int j = 0; j < array2d.GetLength(1); j++)
-                {
-                    Console.Write("{0} ", array2d[i, j]);
-                }
-                Console.WriteLine();
 
-            }
+
             int maxZ1 = array2d[0, 0];
-
-
 
             for (int i = 0; i < array2d.GetLength(0); i++)
             {
@@ -94,30 +61,12 @@ namespace ALLDZ
             return maxZ1;
         }
 
-        public static int[] Exercise_03()
+        public static int[] Exercise_03(int[,] array2d)
         {
             // 3. Найти индекс минимального элемента массива
-            int[,] array2d = new int[10, 5];
-
-            Random random = new Random();
-
-            for (int i = 0; i < array2d.GetLength(0); i++)
+            if (array2d == null || array2d.GetLength(0) == 0 || array2d.GetLength(1) == 0)
             {
-                for (int j = 0; j < array2d.GetLength(1); j++)
-                {
-                    array2d[i, j] = random.Next(10, 101);
-                }
-
-            }
-
-            for (int i = 0; i < array2d.GetLength(0); i++)
-            {
-                for (int j = 0; j < array2d.GetLength(1); j++)
-                {
-                    Console.Write("{0} ", array2d[i, j]);
-                }
-                Console.WriteLine();
-
+                throw new ArgumentNullException("Ошибка ввода двумерного массива");
             }
 
 
@@ -145,30 +94,12 @@ namespace ALLDZ
         }
 
 
-        public static int[] Exercise_04()
+        public static int[] Exercise_04(int[,] array2d)
         {
             // 4. Найти индекс максимального элемента массива
-            int[,] array2d = new int[10, 5];
-
-            Random random = new Random();
-
-            for (int i = 0; i < array2d.GetLength(0); i++)
+            if (array2d == null || array2d.GetLength(0) == 0 || array2d.GetLength(1) == 0)
             {
-                for (int j = 0; j < array2d.GetLength(1); j++)
-                {
-                    array2d[i, j] = random.Next(10, 101);
-                }
-
-            }
-
-            for (int i = 0; i < array2d.GetLength(0); i++)
-            {
-                for (int j = 0; j < array2d.GetLength(1); j++)
-                {
-                    Console.Write("{0} ", array2d[i, j]);
-                }
-                Console.WriteLine();
-
+                throw new ArgumentNullException("Ошибка ввода двумерного массива");
             }
 
 
@@ -195,30 +126,50 @@ namespace ALLDZ
             return arrayMaxIndex;
         }
 
-        public static int Exercise_05(int [,] arr)
+        public static int Exercise_05(int [,] array2d)
         {
             // 5. Найти количество элементов массива, которые больше всех своих соседей одновременно
+            if (array2d == null || array2d.GetLength(0) == 0 || array2d.GetLength(1) == 0)
+            {
+                throw new ArgumentNullException("Ошибка ввода двумерного массива");
+            }
+
 
             int counter = 0;
-            for (int i = 0; i < arr.GetLength(0); i++)
+            for (int i = 0; i < array2d.GetLength(0); i++)
             {
-                for (int j = 0; j < arr.GetLength(1); j++)
+                for (int j = 0; j < array2d.GetLength(1); j++)
                 {
-                    if ((i <= 0 || arr[i, j] > arr[i - 1, j])
-                        && (i >= arr.GetLength(0) - 1 || arr[i, j] > arr[i + 1, j])
-                        && (j <= 0 || arr[i, j] > arr[i, i - 1])
-                        && (j >= arr.GetLength(1) - 1 || arr[i, j] > arr[i, j + 1]))
+                    if ((i <= 0 || array2d[i, j] > array2d[i - 1, j])
+                        && (i >= array2d.GetLength(0) - 1 || array2d[i, j] > array2d[i + 1, j])
+                        && (j <= 0 || array2d[i, j] > array2d[i, j - 1])
+                        && (j >= array2d.GetLength(1) - 1 || array2d[i, j] > array2d[i, j + 1]))
                     {
                         counter++;
-
-                        Console.WriteLine($"{arr[i, j]} i={i}, j={j}");
                     }
                 }
             }
             return counter;
         }
 
+        public static int[,] Exercise_06(int[,] array2d)
+        {
+
+            if (array2d == null || array2d.GetLength(0) == 0 || array2d.GetLength(1) == 0)
+            {
+                throw new ArgumentNullException("Ошибка ввода двумерного массива");
+            }
 
 
+            int[,] tmpArray2d = new int[array2d.GetLength(1), array2d.GetLength(0)];
+            for (int i = 0; i < array2d.GetLength(1); i++)
+            {
+                for (int j = 0; j < array2d.GetLength(0); j++)
+                {
+                    tmpArray2d[i, j] = array2d[j, i];
+                }
+            }
+            return tmpArray2d;
+        }
     }
 }

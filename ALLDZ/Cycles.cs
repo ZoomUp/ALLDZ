@@ -4,18 +4,13 @@ using System.Text;
 
 namespace ALLDZ
 {
-    class Cycles
+    public class Cycles
     {
 
-        public static void Exercise_01()
+        public static double Exercise_01(double numberA, double numberB)
         {
             // 1. Пользователь вводит 2 числа (A и B). Возвести число A в степень B.
-            Console.WriteLine("Первое задание");
-            Console.WriteLine("Введите число A");
-            int numberA = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите число B");
-            int numberB = Convert.ToInt32(Console.ReadLine());
-            int tmp = numberA;
+            double tmp = numberA;
 
             if (numberB > 0)
             {
@@ -23,7 +18,7 @@ namespace ALLDZ
                 {
                     numberA *= tmp;
                 }
-                Console.WriteLine("Ответ на первое задание: " + numberA);
+                return numberA;
 
             }
             else if (numberB < 0)
@@ -32,38 +27,31 @@ namespace ALLDZ
                 {
                     numberA *= tmp;
                 }
-                Console.WriteLine("Ответ на первое задание: " + 1 / (double)numberA);
+                return 1 / numberA;
             }
             else
             {
-                Console.WriteLine("Ответ на первое задание: " + 1);
+                return 1;
             }
         }
 
-        public static void Exercise_02()
+        public static string Exercise_02(int numberA)
         {
             // 2. Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
-            Console.WriteLine("Второе задание");
-            Console.WriteLine("Введите число A");
-            int numberA = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Ответ на второе задание: ");
-
+            string tmp = "";
             for (int i = 1; i < 1000 + 1; i++)
             {
                 if (i % numberA == 0)
                 {
-                    Console.WriteLine(i);
+                    tmp += i + " ";
                 }
             }
+            return tmp;
         }
 
-        public static void Exercise_03()
+        public static int Exercise_03(int numberA)
         {
             // 3. Пользователь вводит 1 число (A). Найдите количество положительных целых чисел, квадрат которых меньше A.
-            Console.WriteLine("Третье задание");
-            Console.WriteLine("Введите число A");
-            int numberA = Convert.ToInt32(Console.ReadLine());
             int tmp = 0;
 
             for (int i = 1; i < numberA; i++)
@@ -73,36 +61,29 @@ namespace ALLDZ
                     tmp++;
                 }
             }
-            Console.WriteLine("Ответ на третье задание: " + tmp);
+            return tmp;
         }
 
-        public static void Exercise_04()
+        public static int Exercise_04(int numberA)
         {
             // 4. Пользователь вводит 1 число (A). Вывести наибольший делитель (кроме самого A) числа A.
-            Console.WriteLine("Четвертое задание");
-            Console.WriteLine("Введите число A");
-            int numberA = Convert.ToInt32(Console.ReadLine());
-
+            int tmp = 0;
             for (int i = numberA - 1; i > 0; i--)
             {
                 if (numberA % i == 0)
                 {
-                    Console.WriteLine("Ответ на четвертое задание: " + i);
+                    tmp = i;
                     break;
                 }
             }
+            return tmp;
         }
 
 
-        public static void Exercise_05()
+        public static int Exercise_05(int numberA, int numberB)
         {
             // 5. Пользователь вводит 2 числа (A и B). Вывести сумму всех чисел из диапазона от A до B, которые делятся без остатка на 7. (Учтите, что при вводе B может оказаться меньше A).
 
-            Console.WriteLine("Пятое задание");
-            Console.WriteLine("Введите число A");
-            int numberA = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите число B");
-            int numberB = Convert.ToInt32(Console.ReadLine());
             int tmp = 0;
             if (numberA > numberB)
             {
@@ -113,9 +94,9 @@ namespace ALLDZ
                         tmp += i;
                     }
                 }
-                Console.WriteLine("Ответ на пятое задание: " + tmp);
+
             }
-            if (numberA < numberB)
+            else
             {
                 for (int i = numberB; i >= numberA; i--)
                 {
@@ -124,17 +105,14 @@ namespace ALLDZ
                         tmp += i;
                     }
                 }
-                Console.WriteLine("Ответ на пятое задание: " + tmp);
             }
+            return tmp;
         }
 
 
-        public static void Exercise_06()
+        public static int Exercise_06(int numberN)
         {
             // 6. Пользователь вводит 1 число (N). Выведите N-ое число ряда фибоначчи. В ряду фибоначчи каждое следующее число является суммой двух предыдущих. Первое и второе считаются равными 1.
-            Console.WriteLine("Шестое задание");
-            Console.WriteLine("Введите число N");
-            int numberN = Convert.ToInt32(Console.ReadLine());
             int tmp1 = 1;
             int tmp2 = 1;
             int numberFibonacci = 1;
@@ -146,18 +124,13 @@ namespace ALLDZ
                 tmp2 = numberFibonacci;
             }
 
-            Console.WriteLine("Ответ на шестое задание: " + numberFibonacci);
+            return numberFibonacci;
         }
 
 
-        public static void Exercise_07()
+        public static int Exercise_07(int numberA, int numberB)
         {
             // 7. Пользователь вводит 2 числа. Найти их наибольший общий делитель используя алгоритм Евклида.
-            Console.WriteLine("Седьмое задание");
-            Console.WriteLine("Введите число A");
-            int numberA = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите число B");
-            int numberB = Convert.ToInt32(Console.ReadLine());
 
             int numberGCF = 0;
             if (numberA == numberB)
@@ -193,16 +166,13 @@ namespace ALLDZ
                 }
             }
 
-            Console.WriteLine("Ответ на седьмое задание: " + numberGCF);
+            return numberGCF;
         }
 
 
-        public static void Exercise_08()
+        public static int Exercise_08(int numberA)
         {
             // 8. Пользователь вводит целое положительное число, которое является кубом целого числа N. Найдите число N методом половинного деления.
-            Console.WriteLine("Восьмое задание");
-            Console.WriteLine("Введите число A");
-            int numberA = Convert.ToInt32(Console.ReadLine());
             int numberN = 1;
             int tmp = numberA;
             int tmp2 = 0;
@@ -225,16 +195,13 @@ namespace ALLDZ
                     break;
                 }
             }
-            Console.WriteLine("Ответ на восьмое задание: " + numberN);
+            return numberN;
         }
 
 
-        public static void Exercise_09()
+        public static int Exercise_09(int numberA)
         {
             // 9. Пользователь вводит 1 число. Найти количество нечетных цифр этого числа.
-            Console.WriteLine("Девятое задание");
-            Console.WriteLine("Введите число A");
-            int numberA = Convert.ToInt32(Console.ReadLine());
             int numberOdd = 0;
             int tmp;
 
@@ -247,16 +214,13 @@ namespace ALLDZ
                     numberOdd++;
                 }
             }
-            Console.WriteLine("Ответ на девятое задание: " + numberOdd);
+            return numberOdd;
         }
 
 
-        public static void Exercise_10()
+        public static int Exercise_10(int numberA)
         {
             // 10. Пользователь вводит 1 число. Найти число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321.
-            Console.WriteLine("Десятое задание");
-            Console.WriteLine("Введите число A");
-            int numberA = Convert.ToInt32(Console.ReadLine());
             int tmp = 0;
             int tmp2 = 1;
             if (numberA < 0)
@@ -274,21 +238,18 @@ namespace ALLDZ
                 }
             }
 
-            Console.WriteLine("Ответ на десятое задание: " + tmp * tmp2);
+            return tmp * tmp2;
         }
 
 
-        public static void Exercise_11()
+        public static string Exercise_11(int numberN)
         {
-            // 11. Пользователь вводит целое положительное  число (N). Выведите числа в диапазоне от 1 до N, сумма четных цифр которых больше суммы нечетных. 
-            Console.WriteLine("Одиннадцатое задание");
-            Console.WriteLine("Введите число N");
-            int numberN = Convert.ToInt32(Console.ReadLine());
+            // 11. Пользователь вводит целое положительное число (N). Выведите числа в диапазоне от 1 до N, сумма четных цифр которых больше суммы нечетных. 
             int numberSumOdd;
             int numberSumEven;
             int tmp;
+            string tmpString = "";
 
-            Console.WriteLine("Ответ на одиннадцатое задание: ");
             for (int i = 1; i < numberN + 1; i++)
             {
                 int j = i;
@@ -311,21 +272,16 @@ namespace ALLDZ
                 }
                 if (numberSumEven > numberSumOdd)
                 {
-                    Console.WriteLine(i);
+                    tmpString += i + " ";
                 }
             }
+            return tmpString;
         }
 
 
-        public static void Exercise_12()
+        public static string Exercise_12(int numberA, int numberB)
         {
             // 12. Пользователь вводит 2 числа. Сообщите, есть ли в написании двух чисел одинаковые цифры. Например, для пары 123 и 3456789, ответом будет являться “ДА”, а, для пары 500 и 99 - “НЕТ”.
-            Console.WriteLine("Седьмое задание");
-            Console.WriteLine("Введите число A");
-            int numberA = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите число B");
-            int numberB = Convert.ToInt32(Console.ReadLine());
-
             int numberCounter = 0;
             int tmp;
             int tmp2;
@@ -362,11 +318,11 @@ namespace ALLDZ
             }
             if (numberCounter > 0)
             {
-                Console.WriteLine("Да");
+                return "Да";
             }
             else
             {
-                Console.WriteLine("Нет");
+                return "Нет";
             }
         }
     }
